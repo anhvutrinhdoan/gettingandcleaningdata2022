@@ -22,3 +22,4 @@ df<-aggregate(combined[1:79],by=list(combined$ACTIVITY),mean)
 names(df)[names(df)=="Group.1"] <- "Activity"
 colnames(df) <- paste(colnames(df), "Average", sep=" ")
 write.csv(df,"finished_df.csv", row.names = FALSE)
+write.table(df,"finished_df.txt", sep = "\t", row.names = FALSE)
