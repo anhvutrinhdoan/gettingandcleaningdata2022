@@ -21,3 +21,4 @@ for (index in c(1:6)){combined[combined$ACTIVITY==index,"ACTIVITY"] <- activity_
 df<-aggregate(combined[1:79],by=list(combined$ACTIVITY),mean)
 names(df)[names(df)=="Group.1"] <- "Activity"
 colnames(df) <- paste(colnames(df), "Average", sep=" ")
+write.csv(df,"finished_df.csv", row.names = FALSE)
